@@ -1,0 +1,125 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
+    x:Class="BMI.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="false">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" 
+				ImageSource="Assets/bg.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="Input" 
+			Margin="99,358,-183,320">
+            <TextBlock x:Name="Weight1" 
+				Foreground="#FFE3FF00" 
+				FontSize="21.333" 
+				FontFamily="Segoe UI Semibold" 
+				LineStackingStrategy="BlockLineHeight" 
+				Canvas.Left="-92" 
+				LineHeight="30" 
+				TextAlignment="Right" 
+				TextWrapping="Wrap" 
+				Text="WEIGHT" 
+				Canvas.Top="-179" 
+				Width="86">
+                <TextBlock.RenderTransform>
+                    <ScaleTransform ScaleY="1.534" 
+						ScaleX="1.534"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="Height1" 
+				Foreground="#FFE3FF00" 
+				FontSize="21.333" 
+				FontFamily="Segoe UI Semibold" 
+				LineStackingStrategy="BlockLineHeight" 
+				Canvas.Left="-86" 
+				LineHeight="30" 
+				TextAlignment="Right" 
+				TextWrapping="Wrap" 
+				Text="HEIGHT" 
+				Canvas.Top="-65">
+                <TextBlock.RenderTransform>
+                    <ScaleTransform ScaleY="1.534" 
+						ScaleX="1.534"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Canvas>
+        <Grid Height="40"
+			Width="40" 
+			Margin="396,191,44,447">
+            <TextBlock x:Name="unit_1"
+				FontSize="30"
+				Foreground="#FFE3FF00"
+				FontFamily="Segoe UI Semibold" Margin="-56,-8,-34,8"/>
+        </Grid>
+        <Grid Height="40"
+			Width="40" 
+			Margin="396,295,44,343">
+            <TextBlock Name="unit_2"
+				FontSize="30"
+				Foreground="#FFE3FF00"
+				FontFamily="Segoe UI Semibold" Margin="-56,0,-34,0"/>
+
+        </Grid>
+        <Button Name="CalculateBmi" 
+			HorizontalAlignment="Left" 
+			Margin="56,520,0,0" 
+			VerticalAlignment="Top" 
+			Height="114" 
+			Width="378"
+			Click="BtnCalculateBmi">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/button.jpg"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="Weight" 
+			HorizontalAlignment="Left" 
+			Height="92" Margin="152,160,0,0" 
+			TextWrapping="Wrap" 
+			VerticalAlignment="Top" 
+			Width="180"
+			InputScope="Number"/>
+        <TextBox x:Name="Height" 
+			HorizontalAlignment="Left" 
+			Height="92" 
+			Margin="150,270,0,0" 
+			TextWrapping="Wrap" 
+			VerticalAlignment="Top" 
+			Width="180"
+			InputScope="Number"/>
+        <GoogleAds:AdView
+            AdUnitID="ca-app-pub-3718238989302361/2559400938"
+            Format="Banner"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Grid.Row="1" 
+            Height="90" />
+        <RadioButton Name="EUstandard"
+                     Content="Standard EU"
+                     Margin="20,404,250,0" 
+                     VerticalAlignment="Top"
+                     Click="click_EU"/>
+        <RadioButton Name="ENstandard"
+                     Content="Standard EN"
+                     HorizontalAlignment="Right" 
+                     Margin="0,404,20,0" 
+                     VerticalAlignment="Top"
+                     Click="click_EN"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>
